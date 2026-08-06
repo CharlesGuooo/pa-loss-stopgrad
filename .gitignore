@@ -1,0 +1,34 @@
+# --- data, weights, run outputs: never committed -----------------------------
+# nuScenes is redistributed under its own licence -- download it from
+# nuscenes.org. SparseDrive weights come from the upstream release.
+data/
+outputs/
+runs/
+*.pth
+*.ckpt
+*.pkl
+*.npz
+*.npy
+*.json.gz
+nuscenes/
+third_party/GameFormer/
+third_party/SparseDrive/
+
+# --- python ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.venv*/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- editors / os ------------------------------------------------------------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,22 @@
+seed: 7
+device: cpu
+
+data:
+  batch_size: 4
+  history_len: 5
+  future_len: 6
+  num_agents: 3
+  state_dim: 9
+
+model:
+  hidden_dim: 64
+  num_prediction_modes: 4
+  num_ego_modes: 3
+
+loss:
+  w_collision: 1.0
+  w_comfort: 0.1
+  w_offroad: 0.0
+  lambda_imit: 1.0
+  lambda_plan: 0.5
+  tau: 1.0

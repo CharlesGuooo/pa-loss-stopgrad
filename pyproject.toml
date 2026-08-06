@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pa-loss-stopgrad"
+version = "1.0.0"
+description = "Planning-aware loss with a stop-gradient control for attributing planning risk to a trajectory predictor"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Xiyuan Guo" }]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "torch",
+    "matplotlib",
+    "pyyaml",
+    "scipy",
+]
+
+[project.optional-dependencies]
+# Needed only to regenerate the preprocessed cache from the raw nuScenes
+# release; the loss, the stop-gradient control and the evaluation code do not
+# import these.
+data = ["nuscenes-devkit", "pyquaternion"]
+dev = ["pytest"]
+# perception/export_perception_interface.py runs inside a SparseDrive
+# environment (mmcv / mmdet3d). Install those from the SparseDrive upstream
+# instructions -- they are not resolvable from PyPI alone.
+
+[project.urls]
+Repository = "https://github.com/CharlesGuooo/pa-loss-stopgrad"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["pa_loss_stopgrad*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
