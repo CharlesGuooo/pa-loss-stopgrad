@@ -1,0 +1,22 @@
+# Training and evaluation environment for the reported results.
+# A100 80GB, driver 535.309.01, CUDA 12.2. Install torch from the index that
+# matches your CUDA build:
+#   pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu121
+torch==2.5.1
+numpy>=1.24,<2.0
+matplotlib>=3.7
+scipy>=1.10
+pyyaml>=6.0
+
+# Regenerating the preprocessed cache from the raw nuScenes release
+# (a separate Python 3.10 environment was used for this; nuscenes-devkit pins an
+# older numpy that conflicts with the training environment):
+#   nuscenes-devkit==1.2.0
+#   pyquaternion==0.9.9
+
+# Exporting the frozen perception cache runs inside SparseDrive's own
+# environment (Python 3.8, torch 1.13.0+cu116) and is not installable from here:
+#   mmcv-full==1.7.1
+#   mmdet==2.28.2
+#   flash-attn==2.3.2
+#   nuscenes-devkit==1.1.10

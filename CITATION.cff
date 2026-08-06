@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+title: "PA-Loss with a stop-gradient control"
+message: "If you use this software, please cite the thesis below."
+type: software
+authors:
+  - given-names: Xiyuan
+    family-names: Guo
+    affiliation: "McMaster University"
+repository-code: "https://github.com/CharlesGuooo/pa-loss-stopgrad"
+license: MIT
+abstract: >-
+  A planning-aware loss that routes a differentiable planning-risk gradient into
+  the mode distribution of a multimodal trajectory predictor, paired with a
+  stop-gradient control that isolates where the gradient lands. Both training
+  arms compute the identical objective and differ in one operation, so a
+  separation between them attributes the effect to the predictor rather than to
+  the planner consuming its forecasts.
+keywords:
+  - trajectory prediction
+  - autonomous driving
+  - motion planning
+  - multimodal prediction
+  - stop-gradient
+preferred-citation:
+  type: thesis
+  title: "Planning-Aware Trajectory Prediction: Routing Downstream Planning Risk into a Frozen-Perception Multimodal Predictor"
+  authors:
+    - given-names: Xiyuan
+      family-names: Guo
+  thesis-type: "M.A.Sc. thesis"
+  institution:
+    name: "McMaster University"
+  year: 2026
