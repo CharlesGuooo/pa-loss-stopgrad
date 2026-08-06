@@ -13,6 +13,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from pa_loss_stopgrad.data.nuscenes_mini import NuScenesMini
+from pa_loss_stopgrad.paths import NUSCENES_ROOT
 from pa_loss_stopgrad.data.nuscenes_trajectories import build_scene_tracks, iter_trajectory_windows
 from pa_loss_stopgrad.eval.conflict_metrics import (
     classify_conflict_diagnostics,
@@ -136,7 +137,8 @@ def summarize_mining_records(records, num_scenes):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--data-root", default="D:/Research/Thesis/v1.0-mini")
+    parser.add_argument("--data-root", default=str(NUSCENES_ROOT),
+                        help="nuScenes release root; override with NUSCENES_ROOT")
     parser.add_argument("--version", default="v1.0-mini")
     parser.add_argument("--history-len", type=int, default=5)
     parser.add_argument("--future-len", type=int, default=6)

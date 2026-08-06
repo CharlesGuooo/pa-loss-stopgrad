@@ -18,7 +18,7 @@ from pa_loss_stopgrad.carriers.simple_predictor import SimplePredictor
 
 
 def run_local_risk_training(
-    data_root="D:/Research/Thesis/nuScenes/v1.0-trainval_meta",
+    data_root=None,
     version="v1.0-trainval",
     train_event_json="outputs/phase0_10/severe_train_events.json",
     val_event_json="outputs/phase0_10/severe_val_events.json",

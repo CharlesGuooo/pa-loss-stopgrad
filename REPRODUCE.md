@@ -181,7 +181,8 @@ python scripts/build_ego_anchor_library.py
 python scripts/export_planner_train_pred.py
 python scripts/train_shared_planner.py --epochs 20 --batch-size 64 --w-coll 1.0
 python scripts/run_phase2_8_planner_probe.py --domains oracle,perceived
-python scripts/run_phase2_8_perframe.py
+python scripts/run_phase2_7b_perframe.py      # per-frame dump (schema shared with 2.8)
+python scripts/run_phase2_8_perframe.py       # loads the 2.7b module at runtime
 python scripts/build_phase2_8_summary.py
 ```
 
@@ -209,7 +210,17 @@ unnecessary avoidance but is **not** a separation-safety gain.
 
 ## 8. Figures
 
-- **Fig. 3** (bootstrap intervals): `figures/make_fig3.py`
+- **Fig. 3** (bootstrap intervals): `python figures/make_fig3.py`. This one runs
+  straight from a fresh clone — `results/stats_wp.json` is committed, so the
+  headline interval can be checked without training anything:
+
+  ```
+  oracle    global        full 0.222 [0.213, 0.231] | sg 0.355 [0.345, 0.364]  (non-overlap)
+  oracle    high_conflict full 0.577 [0.518, 0.637] | sg 0.768 [0.732, 0.802]  (non-overlap)
+  perceived global        full 0.271 [0.262, 0.279] | sg 0.419 [0.409, 0.429]  (non-overlap)
+  perceived high_conflict full 0.635 [0.578, 0.692] | sg 0.811 [0.774, 0.846]  (non-overlap)
+  -> wrote guo3.pdf
+  ```
 - **Fig. 4** (ghost-braking BEV pair): rendered from the cached scene data by the
   visualization tool; see `figures/README.md`. Frame token
   `af67f465f5994ac7bab19825336db644`, perceived domain, ΔL2 ≈ 0.66 m.

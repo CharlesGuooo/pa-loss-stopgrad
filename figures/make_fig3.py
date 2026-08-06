@@ -10,13 +10,15 @@ Differences from the thesis version (thesis/figures/scripts/plot_results.py):
   * hatching on the control bars so colour and texture carry the same
     information -> survives a greyscale printout (IEEE accessibility)
 
-Data source is the same committed result JSON; nothing is hard-coded.
+Reads ../results/stats_wp.json, the committed bootstrap output of
+scripts/build_phase2_7b_stats.py. Override with PA_LOSS_STATS_WP.
 
-Run:  uv run --with matplotlib python make_fig3.py
+Run:  python figures/make_fig3.py
 """
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 import matplotlib
@@ -24,7 +26,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 HERE = Path(__file__).resolve().parent
-WP_JSON = Path(r"D:\Research\Thesis\KnowledgeBase\03_实验结果\phase2_7b\stats_wp.json")
+WP_JSON = Path(os.environ.get("PA_LOSS_STATS_WP", HERE.parent / "results" / "stats_wp.json"))
 
 # Okabe-Ito colourblind-safe palette (same as the thesis figure)
 BLUE = "#0072B2"      # full PA-Loss

@@ -32,3 +32,7 @@ venv/
 .idea/
 .DS_Store
 Thumbs.db
+
+# generated figure output (regenerate with figures/make_fig3.py)
+figures/guo3.pdf
+figures/guo4.png
