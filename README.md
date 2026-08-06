@@ -167,8 +167,8 @@ not exist without those authors releasing their work.
 }
 ```
 
-A journal article condensing this work is under review; this section will be
-updated when it appears.
+A journal article condensing this work is in preparation; this section will be
+updated with its citation when it appears.
 
 ## Licence
 
