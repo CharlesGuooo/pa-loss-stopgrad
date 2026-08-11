@@ -34,6 +34,7 @@ venv/
 Thumbs.db
 
 # generated figure output (regenerate with figures/make_fig3.py)
-figures/guo3.pdf
-figures/guo4.png
+figures/guo*.pdf
+figures/guo*.png
+figures/*_preview.png
 !figures/pipeline.png

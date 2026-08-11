@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Regenerate Fig. 3 (working-point collision proxy with bootstrap 95% CIs) as a
+Regenerate Fig. 4 (working-point collision proxy with bootstrap 95% CIs) as a
 PDF vector sized for the IEEE single column.
 
 Differences from the thesis version (thesis/figures/scripts/plot_results.py):
@@ -10,15 +10,13 @@ Differences from the thesis version (thesis/figures/scripts/plot_results.py):
   * hatching on the control bars so colour and texture carry the same
     information -> survives a greyscale printout (IEEE accessibility)
 
-Reads ../results/stats_wp.json, the committed bootstrap output of
-scripts/build_phase2_7b_stats.py. Override with PA_LOSS_STATS_WP.
+Data source is the same committed result JSON; nothing is hard-coded.
 
-Run:  python figures/make_fig3.py
+Run:  uv run --with matplotlib python make_fig3.py
 """
 from __future__ import annotations
 
 import json
-import os
 from pathlib import Path
 
 import matplotlib
@@ -26,7 +24,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 HERE = Path(__file__).resolve().parent
-WP_JSON = Path(os.environ.get("PA_LOSS_STATS_WP", HERE.parent / "results" / "stats_wp.json"))
+WP_JSON = Path(r"D:\Research\Thesis\KnowledgeBase\03_实验结果\phase2_7b\stats_wp.json")
 
 # Okabe-Ito colourblind-safe palette (same as the thesis figure)
 BLUE = "#0072B2"      # full PA-Loss
@@ -95,7 +93,7 @@ ax.set_ylim(0, max(sg_v) * 1.22)
 ax.legend(frameon=False, loc="upper left", handlelength=1.4, borderpad=0.2)
 ax.margins(x=0.04)
 
-out = HERE / "guo3.pdf"
+out = HERE / "guo4.pdf"
 fig.savefig(out)
 plt.close(fig)
 print("\n-> wrote %s  (%.1f KB, vector)" % (out.name, out.stat().st_size / 1024))

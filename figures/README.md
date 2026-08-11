@@ -1,10 +1,22 @@
 # Paper figures
 
-- **Fig. 3** — bootstrap confidence intervals for the working-point collision
-  proxy. `python make_fig3.py` (reads the stats JSON produced by
+Scripts are named by what they draw, not by figure number, so inserting a
+figure cannot desynchronise them. Output files follow IEEE's convention of
+matching the figure order: `guo3.pdf` = Fig. 3, `guo4.pdf` = Fig. 4,
+`guo5.png` = Fig. 5. (Figs. 1 and 2 are TikZ, compiled inline with the paper.)
+
+- **Fig. 3** — the accuracy/safety trade-off and the guard-cap working point.
+  `python make_tradeoff.py`, reading the committed `../results/trainpath.json`.
+  Runs from a fresh clone with no training: it shows both arms' six fine-tuning
+  epochs, and the stop-gradient control visibly going nowhere under the same
+  objective.
+
+
+- **Fig. 5** — bootstrap confidence intervals for the working-point collision
+  proxy. `python make_ci_plot.py` (reads the stats JSON produced by
   `scripts/build_phase2_7b_stats.py`).
 
-- **Fig. 4** — the ghost-braking BEV pair. Rendered by the interactive
+- **Fig. 5** — the ghost-braking BEV pair. Rendered by the interactive
   visualization tool from cached scene data, not by re-running any model:
 
   ```bash
