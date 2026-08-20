@@ -171,7 +171,7 @@ artefact of one weight.
 
 ---
 
-## 7. Planning leg II — frozen shared planner (§V-E, Table II, Fig. 4)
+## 7. Planning leg II — frozen shared planner (§V-E, Table II, Fig. 5)
 
 Train the probe **once**, on predictions from the common baseline ancestor of
 every variant, then freeze it and apply it unchanged to all conditions:
@@ -210,7 +210,12 @@ unnecessary avoidance but is **not** a separation-safety gain.
 
 ## 8. Figures
 
-- **Fig. 3** (bootstrap intervals): `python figures/make_fig3.py`. This one runs
+- **Fig. 3** (accuracy/safety trade-off and the guard-cap working point):
+  `python figures/make_tradeoff.py`. Runs from a fresh clone with no training —
+  `results/trainpath.json` is committed. It shows both arms across all six
+  fine-tuning epochs, and the stop-gradient control visibly going nowhere under
+  the same objective.
+- **Fig. 4** (bootstrap intervals): `python figures/make_ci_plot.py`. This one runs
   straight from a fresh clone — `results/stats_wp.json` is committed, so the
   headline interval can be checked without training anything:
 
@@ -219,11 +224,15 @@ unnecessary avoidance but is **not** a separation-safety gain.
   oracle    high_conflict full 0.577 [0.518, 0.637] | sg 0.768 [0.732, 0.802]  (non-overlap)
   perceived global        full 0.271 [0.262, 0.279] | sg 0.419 [0.409, 0.429]  (non-overlap)
   perceived high_conflict full 0.635 [0.578, 0.692] | sg 0.811 [0.774, 0.846]  (non-overlap)
-  -> wrote guo3.pdf
+  -> wrote guo4.pdf
   ```
-- **Fig. 4** (ghost-braking BEV pair): rendered from the cached scene data by the
+- **Fig. 5** (ghost-braking BEV pair): rendered from the cached scene data by the
   visualization tool; see `figures/README.md`. Frame token
   `af67f465f5994ac7bab19825336db644`, perceived domain, ΔL2 ≈ 0.66 m.
+
+Figure files follow IEEE's convention of matching figure order: `guo3.pdf` =
+Fig. 3, `guo4.pdf` = Fig. 4, `guo5.png` = Fig. 5. Figs. 1 and 2 are TikZ,
+compiled inline with the paper.
 
 ---
 

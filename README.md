@@ -69,7 +69,7 @@ risk surrogates, two prediction carriers, and both oracle and perceived inputs.
 Regenerate the interval plot from committed results, no training required:
 
 ```bash
-python figures/make_fig3.py
+python figures/make_ci_plot.py
 # oracle global  full 0.222 [0.213, 0.231] | sg 0.355 [0.345, 0.364]  (non-overlap)
 ```
 
@@ -90,7 +90,7 @@ cd third_party/GameFormer && git checkout fcb0d4a0f5cbbcecf69f9b9796366d6f5f2ce1
 
 pytest tests/ -q                          # 103 passed, 1 skipped
 python scripts/check_pa_loss_gradients.py # the instrument, on synthetic tensors
-python figures/make_fig3.py               # the headline intervals, from committed results
+python figures/make_ci_plot.py            # the headline intervals, from committed results
 ```
 
 None of those three needs nuScenes or a GPU.
@@ -167,8 +167,9 @@ not exist without those authors releasing their work.
 }
 ```
 
-A journal article condensing this work is in preparation; this section will be
-updated with its citation when it appears.
+A journal article condensing this work has been submitted to IEEE Transactions
+on Intelligent Vehicles and is under review. This section will be updated with
+its citation if and when it appears.
 
 ## Licence
 
